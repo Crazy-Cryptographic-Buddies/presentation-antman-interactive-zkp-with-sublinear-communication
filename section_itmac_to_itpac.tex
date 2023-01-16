@@ -1,0 +1,31 @@
+% !TeX root = main.tex
+\begin{frame}{Interactive Commitments from IT-MACs}
+	\cite{BaumMRS21, YangSWW21, DittmerOI21} uses IT-MACs, generated from VOLE, to perform interactive commitments. 
+	
+	Let  $\Delta$ is global and held by $\Verifier$.
+	
+	Specifically, to commit $x \in \mathbb{F}$,  $\Prover$ and $\Verifier$ interact to obtain
+	\begin{equation*}
+		M_x = K_x + x\cdot \Delta
+	\end{equation*}
+	where $(x, M_x)$ is held by $\Prover$ and $K_x$ is held by $\Verifier$.
+	
+	Commitment is additively homomorphic. 
+	
+	$M_{x_1} + M_{x_2}$ and $K_{x_1} + K_{x_2}$ correspond to $x_1 + x_2$.
+\end{frame}
+\begin{frame}{Committing to Polynomials: IT-PACs}
+	To commit a polynomial $f(\cdot)$, enforce $\Prover$ to compute $f(\Lambda)$ where $\Lambda$ is unknown to $\Prover$ and known to $\Verifier$.
+	
+	\textbf{Technique:} Use AHE to encrypt $\Lambda^1, \dots, \Lambda^{2(B - 1)}$.
+	
+	\textbf{Hiding Not Guaranteed:} $f(\Lambda)$ is known to $\Verifier$ $\Rightarrow$ Use IT-MACs.
+	
+	Try obtaining $M_f = K_f + f(\Lambda) \cdot \Delta$.
+	
+	Yet $f(\Lambda)$ is known to $\Prover$ $\Rightarrow$ Do not early reveal $\Lambda$ to $\Prover$.
+	
+	To open $f(\cdot)$, send entire $f(\cdot)$ to $\Verifier$.
+	
+	Additively homomorphic: $M_{f} + M_{g}$ and $K_{f} + K_{g}$ correspond to $f(\cdot) + g(\cdot)$.
+\end{frame}
