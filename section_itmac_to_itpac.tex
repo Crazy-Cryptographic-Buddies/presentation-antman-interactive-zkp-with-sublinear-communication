@@ -1,6 +1,6 @@
 % !TeX root = main.tex
 \begin{frame}{Interactive Commitments from IT-MACs}
-	\cite{BaumMRS21, YangSWW21, DittmerOI21} uses IT-MACs, generated from VOLE, to perform interactive commitments. 
+	\cite{BaumMRS21, YangSWW21, DittmerIO21} uses IT-MACs, generated from VOLE, to perform interactive commitments. 
 	
 	Let  $\Delta$ is global and held by $\Verifier$.
 	
@@ -28,4 +28,6 @@
 	To open $f(\cdot)$, send entire $f(\cdot)$ to $\Verifier$.
 	
 	Additively homomorphic: $M_{f} + M_{g}$ and $K_{f} + K_{g}$ correspond to $f(\cdot) + g(\cdot)$.
+	
+	To prove correct multiplications, use previous DVZK, e.g., \cite{YangSWW21}.
 \end{frame}
