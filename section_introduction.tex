@@ -1,1 +1,15 @@
 % !TeX root = main.tex
+\begin{frame}{Problem Statement}
+	Let $\Circuit$ be arithmetic circuit with addition and multiplication gates.
+	
+	$\Prover$ convinces $\Verifier$ that he knows $\mathbf{w} \in \mathbb{F}^m$ s.t. $\Circuit(\mathbf{w}) = 0$.
+	
+	\textbf{In this paper}, $\Prover$ convinces $\Verifier$ that $\Prover$ knows $\mathbf{w}_1, \dots, \mathbf{w}_B \in \mathbb{F}^m$ s.t.
+	\begin{equation*}
+		\Circuit(\mathbf{w}_1) = \Circuit(\mathbf{w}_2) = \dots = \Circuit(\mathbf{w}_B) = 0.
+	\end{equation*}
+
+	$\Circuit(\mathbf{w}_i) = \Circuit(w_{i,1}, \dots, w_{i, m})$: Evaluation in the $i$-th instance of $\Circuit$.
+	
+	\textbf{Target:} Achieve communication complexity $\BigO(|\Circuit| + B)$ in DVZK.
+\end{frame}
