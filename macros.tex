@@ -1,0 +1,20 @@
+% !TeX root = main.tex
+\AtBeginSection[]{
+	\begin{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+\newcommand{\thankyouframe}{\begin{frame}{}
+		\begin{center}
+			{\fontsize{20}{20}\selectfont Thank You!}
+		\end{center}
+\end{frame}}
+
+\newcommand{\Prover}{\mathcal{P}}
+\newcommand{\Verifier}{\mathcal{V}}
