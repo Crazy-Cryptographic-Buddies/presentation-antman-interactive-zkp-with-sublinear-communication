@@ -1,16 +1,16 @@
 % !TeX root = main.tex
 \begin{frame}{Compressing Polynomials}
-	\textbf{Purpose:} For $\tilde{f}_j(\cdot)$ and $f_j(\cdot)$, where $j \in \{1, \dots, k\}$, prove that 
+	\textbf{Purpose:} For $\tilde{f}_j(\cdot)$ and $f_j(\cdot)$, where $j \in \{1, \dots, k\}$, prove that \pause
 	\begin{equation*}
-		\tilde{f}_j(\alpha_i) = f_j(\alpha_i) \quad \forall i \in \{1, \dots, B\}, \forall j \in \{1,\dots, k\}. 
+		\tilde{f}_j(\alpha_i) = f_j(\alpha_i) \quad \forall i \in \{1, \dots, B\}, \forall j \in \{1,\dots, k\}. \pause
 	\end{equation*}
 
-	\textbf{Technique:} $\Verifier$ sends a challenges $\chi_1, \dots, \chi_k$.
+	\textbf{Technique:} $\Verifier$ sends a challenges $\chi_1, \dots, \chi_k$.\pause
 	
-	$\Prover$ compute IT-PACs to $$f(\cdot) = \sum_j \chi_j \cdot f_j(\cdot) + r(\cdot), \quad\tilde{f}(\cdot) = \sum_j \chi_j \cdot \tilde{f}_j(\cdot) + s(\cdot)$$
-	where $r(\cdot)$ and $s(\cdot)$ agree on $\alpha_1, \dots, \alpha_B$.
+	$\Prover$ compute IT-PACs to $$f(\cdot) = \sum_j \chi_j \cdot f_j(\cdot) + r(\cdot), \quad\tilde{f}(\cdot) = \sum_j \chi_j \cdot \tilde{f}_j(\cdot) + s(\cdot)$$\pause
+	where $r(\cdot)$ and $s(\cdot)$ agree on $\alpha_1, \dots, \alpha_B$.\pause
 	
-	$\Prover$ sends $f(\cdot)$ and $\tilde{f}(\cdot)$ to $\Verifier$.
+	$\Prover$ sends $f(\cdot)$ and $\tilde{f}(\cdot)$ to $\Verifier$.\pause
 	
 	Based on additive homomorphism, $f(\cdot)$ and $\tilde{f}(\cdot)$ agree on $\alpha_1, \dots, \alpha_B$.
 \end{frame}

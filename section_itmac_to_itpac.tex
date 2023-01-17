@@ -1,33 +1,33 @@
 % !TeX root = main.tex
 \begin{frame}{Interactive Commitments from IT-MACs}
-	\cite{BaumMRS21, YangSWW21, DittmerIO21} uses IT-MACs, generated from VOLE, to perform interactive commitments. 
+	\cite{BaumMRS21, YangSWW21, DittmerIO21} uses IT-MACs, generated from VOLE, to perform interactive commitments. \pause
 	
-	Let  $\Delta$ is global and held by $\Verifier$.
+	Let  $\Delta$ is global and held by $\Verifier$.\pause
 	
-	Specifically, to commit $x \in \mathbb{F}$,  $\Prover$ and $\Verifier$ interact to obtain
+	Specifically, to commit $x \in \mathbb{F}$,  $\Prover$ and $\Verifier$ interact to obtain\pause
 	\begin{equation*}
-		M_x = K_x + x\cdot \Delta
+		M_x = K_x + x\cdot \Delta\pause
 	\end{equation*}
 	where $(x, M_x)$ is held by $\Prover$ and $K_x$ is held by $\Verifier$.
 	
-	Commitment is additively homomorphic. 
+	Commitment is additively homomorphic. \pause
 	
 	$M_{x_1} + M_{x_2}$ and $K_{x_1} + K_{x_2}$ correspond to $x_1 + x_2$.
 \end{frame}
 \begin{frame}{Committing to Polynomials: IT-PACs}
-	To commit a polynomial $f(\cdot)$, enforce $\Prover$ to compute $f(\Lambda)$ where $\Lambda$ is unknown to $\Prover$ and known to $\Verifier$.
+	To commit a polynomial $f(\cdot)$, enforce $\Prover$ to compute $f(\Lambda)$ where $\Lambda$ is unknown to $\Prover$ and known to $\Verifier$.\pause
 	
-	\textbf{Technique:} Use AHE to encrypt $\Lambda^1, \dots, \Lambda^{2(B - 1)}$.
+	\textbf{Technique:} Use AHE to encrypt $\Lambda^1, \dots, \Lambda^{2(B - 1)}$.\pause
 	
-	\textbf{Hiding Not Guaranteed:} $f(\Lambda)$ is known to $\Verifier$ $\Rightarrow$ Use IT-MACs.
+	\textbf{Hiding Not Guaranteed:} $f(\Lambda)$ is known to $\Verifier$ $\Rightarrow$ Use IT-MACs.\pause
 	
-	Try obtaining $M_f = K_f + f(\Lambda) \cdot \Delta$.
+	Try obtaining $M_f = K_f + f(\Lambda) \cdot \Delta$.\pause
 	
-	Yet $f(\Lambda)$ is known to $\Prover$ $\Rightarrow$ Do not early reveal $\Lambda$ to $\Prover$.
+	Yet $f(\Lambda)$ is known to $\Prover$ $\Rightarrow$ Do not early reveal $\Lambda$ to $\Prover$.\pause
 	
-	To open $f(\cdot)$, send entire $f(\cdot)$ to $\Verifier$.
+	To open $f(\cdot)$, send entire $f(\cdot)$ to $\Verifier$.\pause
 	
-	Additively homomorphic: $M_{f} + M_{g}$ and $K_{f} + K_{g}$ correspond to $f(\cdot) + g(\cdot)$.
+	Additively homomorphic: $M_{f} + M_{g}$ and $K_{f} + K_{g}$ correspond to $f(\cdot) + g(\cdot)$.\pause
 	
 	To prove correct multiplications, use previous DVZK, e.g., \cite{YangSWW21}.
 \end{frame}

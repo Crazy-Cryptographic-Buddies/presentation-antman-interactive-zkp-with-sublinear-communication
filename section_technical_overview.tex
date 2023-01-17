@@ -1,51 +1,51 @@
 % !TeX root = main.tex
 
 \begin{frame}{Compiling to Polynomials}
-	Choose distinct $\alpha_1, \dots, \alpha_B \in \mathbb{F}$.
+	Choose distinct $\alpha_1, \dots, \alpha_B \in \mathbb{F}$.\pause
 	
-	Interpolate to obtain $f_1(\cdot), \dots, f_m(\cdot)$ of degree $B - 1$ s.t.
+	Interpolate to obtain $f_1(\cdot), \dots, f_m(\cdot)$ of degree $B - 1$ s.t.\pause
 	\begin{equation*}
-		f_j(\alpha_i) = w_{i,j}.
+		f_j(\alpha_i) = w_{i,j}.\pause
 	\end{equation*}
 
 	Hence, $\mathbf{w}_i = (f_1(\alpha_i), \dots, f_m(\alpha_i))$ is input to $i$-th instance. 
 \end{frame}
 
 \begin{frame}{Trivial Technique for Proving Satisfaction of Circuits}
-	Trivial technique:
+	Trivial technique:\pause
 	\begin{itemize}
-		\item For each addition gate $(\gamma, \sigma, \lambda)$, prove that $$f_\lambda(\cdot) = f_\gamma(\cdot) + f_\sigma(\cdot).$$
-		Hence, $w_{i,\gamma} = f_\lambda(\alpha_i) = f_\gamma(\alpha_i) + f_\sigma(\alpha_i) = w_{i, \gamma} + w_{i, \sigma}$.
-		\item For each multiplication gate $(\gamma, \sigma, \lambda)$, prove that $$f_\lambda(\cdot) = f_\gamma(\cdot) \cdot f_\sigma(\cdot).$$
+		\item For each addition gate $(\gamma, \sigma, \lambda)$, prove that $$f_\lambda(\cdot) = f_\gamma(\cdot) + f_\sigma(\cdot).$$\pause
+		Hence, $w_{i,\gamma} = f_\lambda(\alpha_i) = f_\gamma(\alpha_i) + f_\sigma(\alpha_i) = w_{i, \gamma} + w_{i, \sigma}$.\pause
+		\item For each multiplication gate $(\gamma, \sigma, \lambda)$, prove that $$f_\lambda(\cdot) = f_\gamma(\cdot) \cdot f_\sigma(\cdot).$$\pause
 		Hence, $w_{i,\gamma} = f_\lambda(\alpha_i) = f_\gamma(\alpha_i) \cdot f_\sigma(\alpha_i) = w_{i, \gamma} \cdot w_{i, \sigma}$.
 	\end{itemize} 
 \end{frame} 
 \begin{frame}{Trivial Technique: A Warning}
-	For large-depth circuits, degree of polynomials can be extremely large due to a huge number of multiplication gates.
+	For large-depth circuits, degree of polynomials can be extremely large due to a huge number of multiplication gates.\pause
 	
 	For example, $\Circuit$ realizes the polynomial $x^{10} + 2x^7 + 3x^6 + x^2 + 1$ has witness polynomial with degree $10(2B - 1)$.
 \end{frame} 
 \begin{frame}{Compression Technique}
-	Whenever we deal with a multiplication gate, multiply then reduce.
+	Whenever we deal with a multiplication gate, multiply then reduce.\pause
 	
-	For each multiplication gate $(\gamma, \sigma, \lambda)$, prove that $$\tilde{f}_\lambda(\cdot) = f_\gamma(\cdot) \cdot f_\sigma(\cdot).$$
+	For each multiplication gate $(\gamma, \sigma, \lambda)$, prove that $$\tilde{f}_\lambda(\cdot) = f_\gamma(\cdot) \cdot f_\sigma(\cdot).$$\pause
 	
-	$\tilde{f}_\lambda(\cdot)$ has degree $2(B - 1)$ such that 
+	$\tilde{f}_\lambda(\cdot)$ has degree $2(B - 1)$ such that \pause
 	\begin{equation*}
-	 	w_{1, \lambda} = \tilde{f}_\lambda(\alpha_1), \quad \dots, \quad w_{B, \lambda} = \tilde{f}_\lambda(\alpha_B). 
+	 	w_{1, \lambda} = \tilde{f}_\lambda(\alpha_1), \quad \dots, \quad w_{B, \lambda} = \tilde{f}_\lambda(\alpha_B). \pause
 	\end{equation*}
 	
-	A degree-$(B - 1)$ polynomial $f_\lambda(\cdot)$ is sufficient.
+	A degree-$(B - 1)$ polynomial $f_\lambda(\cdot)$ is sufficient.\pause
 	
-	\textbf{Method:} Introduce $f_\lambda(\cdot)$ such that 
+	\textbf{Method:} Introduce $f_\lambda(\cdot)$ such that \pause
 	\begin{equation*}
-		w_{1, \lambda} = f_\lambda(\alpha_1), \quad \dots, \quad w_{B, \lambda} = f_\lambda(\alpha_B)
+		w_{1, \lambda} = f_\lambda(\alpha_1), \quad \dots, \quad w_{B, \lambda} = f_\lambda(\alpha_B)\pause
 	\end{equation*}
 	and prove $f_\lambda(\cdot)$ and $\tilde{f}_\lambda(\cdot)$ agree on $\alpha_1, \dots, \alpha_B$.
 \end{frame}
 \begin{frame}{New Techniques}
 	\begin{itemize}
-		\item Converting IT-MACs (for single field element) to IT-PACs (for polynomials).
+		\item Converting IT-MACs (for single field element) to IT-PACs (for polynomials).\pause
 		\item Compressing polynomials and batch verification.
 	\end{itemize}
 \end{frame}

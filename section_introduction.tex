@@ -1,24 +1,24 @@
 % !TeX root = main.tex
 \begin{frame}{Problem Statement}
-	Let $\Circuit$ be arithmetic circuit with addition and multiplication gates.
+	Let $\Circuit$ be arithmetic circuit with addition and multiplication gates.\pause
 	
-	$\Prover$ convinces $\Verifier$ that he knows $\mathbf{w} \in \mathbb{F}^m$ s.t. $\Circuit(\mathbf{w}) = 0$.
+	$\Prover$ convinces $\Verifier$ that he knows $\mathbf{w} \in \mathbb{F}^m$ s.t. $\Circuit(\mathbf{w}) = 0$.\pause
 	
-	\textbf{In this paper}, $\Prover$ convinces $\Verifier$ that $\Prover$ knows $\mathbf{w}_1, \dots, \mathbf{w}_B \in \mathbb{F}^m$ s.t.
+	\textbf{In this paper}, $\Prover$ convinces $\Verifier$ that $\Prover$ knows $\mathbf{w}_1, \dots, \mathbf{w}_B \in \mathbb{F}^m$ s.t.\pause
 	\begin{equation*}
-		\Circuit(\mathbf{w}_1) = \Circuit(\mathbf{w}_2) = \dots = \Circuit(\mathbf{w}_B) = 0.
+		\Circuit(\mathbf{w}_1) = \Circuit(\mathbf{w}_2) = \dots = \Circuit(\mathbf{w}_B) = 0.\pause
 	\end{equation*}
 
-	$\Circuit(\mathbf{w}_i) = \Circuit(w_{i,1}, \dots, w_{i, m})$: Evaluation in the $i$-th instance of $\Circuit$.
+	$\Circuit(\mathbf{w}_i) = \Circuit(w_{i,1}, \dots, w_{i, m})$: Evaluation in the $i$-th instance of $\Circuit$.\pause
 	
-	\textbf{Target:} Achieve communication complexity $\BigO(|\Circuit| + B)$ in DVZK.
+	\textbf{Target:} Achieve communication complexity $\BigO(|\Circuit| + B)$ in DVZK.\pause
 \end{frame}
 \begin{frame}{Previous Works and Results}
-	\textbf{Previous Works:} Achieve DVZKs with linear communication on circuit size, e.g., \cite{YangSWW21, BaumBMRS21, DittmerILO22}.
+	\textbf{Previous Works:} Achieve DVZKs with linear communication on circuit size, e.g., \cite{YangSWW21, BaumBMRS21, DittmerILO22}.\pause
 	
-	\textbf{This paper \cite{Weng0YX022}:}
+	\textbf{This paper \cite{Weng0YX022}:}\pause
 	\begin{itemize}
-		\item Achieve communication complexity $\BigO(|\Circuit| + B)$ for $B$ executions of the same circuit $\Circuit$. 
+		\item Achieve communication complexity $\BigO(|\Circuit| + B)$ for $B$ executions of the same circuit $\Circuit$. \pause
 		\item Achieve sublinear complexity $\BigO(|\Circuit|^{3/4})$ for single execution circuit $\Circuit$. 
 	\end{itemize}
 \end{frame}
